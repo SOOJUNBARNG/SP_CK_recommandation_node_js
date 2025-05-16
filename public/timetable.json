@@ -1,0 +1,62 @@
+[
+  {
+    "Clinic": "新宿院",
+    "patients": [
+      {
+        "Patient": "お客様1",
+        "schedule": [
+          { "start": "09:00", "end": "11:00" }
+        ],
+        "CK": "大王",
+        "options": [
+          { "CK_option1": "目良", "CK_option2": "加藤" }
+        ]
+      },
+      {
+        "Patient": "お客様2",
+        "schedule": [
+          { "start": "14:00", "end": "17:00" }
+        ],
+        "CK": "大王",
+        "options": [
+          { "CK_option1": "目良", "CK_option2": "加藤" }
+        ]
+      },
+      {
+        "Patient": "お客様3",
+        "schedule": [
+          { "start": "09:00", "end": "11:00" }
+        ],
+        "CK": "北斗",
+        "options": [
+          { "CK_option1": "相良", "CK_option2": "目黒" }
+        ]
+      },
+      {
+        "Patient": "お客様5",
+        "schedule": [
+          { "start": "14:00", "end": "17:00" }
+        ],
+        "CK": "原田",
+        "options": [
+          { "CK_option1": "目良", "CK_option2": "加藤" }
+        ]
+      }
+    ]
+  },
+  {
+    "Clinic": "銀座院",
+    "patients": [
+      {
+        "Patient": "お客様4",
+        "schedule": [
+          { "start": "14:00", "end": "17:00" }
+        ],
+        "CK": "北斗",
+        "options": [
+          { "CK_option1": "相良", "CK_option2": "目黒" }
+        ]
+      }
+    ]
+  }
+]

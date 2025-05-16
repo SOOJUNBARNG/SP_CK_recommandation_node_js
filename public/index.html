@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>患者スケジュール表</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    .editable:hover { background-color: #eef; cursor: pointer; }
+    #barChartContainer { margin-top: 40px; }
+  </style>
+</head>
+<body class="p-4">
+  <h1>インタラクティブ時間割（09:00〜20:00）</h1><hr>
+  <div style="overflow-x: auto; white-space: nowrap; border: 1px solid #ccc; padding: 10px;">
+    <h2>クリニック絞り</h2><hr>
+    <select id="clinicSelector" class="form-select mb-3" onchange="switchClinic(this.value)"></select>
+  </div><br>
+
+
+  <div style="display: flex; gap: 20px; align-items: flex-start; overflow-x: auto; white-space: nowrap; border: 1px solid #ccc; padding: 10px;">
+    <div style="min-width: 600px;">
+      <h2>スケジュール時間帯テーブル</h2><hr>
+      <div class="mb-3">
+        <button class="btn btn-primary" onclick="AddNewCK()">＋ カウンセラー追加</button>
+        <button class="btn btn-primary" onclick="AddNewCustomer()">＋ 新規患者様追加</button>
+        <button class="btn btn-primary" onclick="DeleteCK()">＋ カウンセラー欠勤</button>
+        <button class="btn btn-primary" onclick="DeleteCustomer()">＋ 患者様キャンセル</button>
+      </div><br>
+      <div id="timetable-container" style="display: inline-block;">
+      </div>
+    </div>
+
+    <div style="min-width: 600px;">
+      <h2>スケジュール時間帯チャート</h2>
+      <hr>
+      <div id="barChartContainer">
+        <canvas id="barChart" height="350"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
