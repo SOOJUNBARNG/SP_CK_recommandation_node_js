@@ -10,5 +10,5 @@ jobs:
       - name: Deploy To Glitch
         uses: kanadgupta/glitch-sync@main
         with:
+          auth-token: '${{ secrets.AUTHTOKEN }}'
           project-id: '${{ secrets.PROJECT_ID }}'
-          auth-token: '${{ secrets.AUTH_TOKEN }}'
