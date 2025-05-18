@@ -14,14 +14,15 @@
 <body class="p-4">
   <h1>インタラクティブ時間割（09:00〜20:00）</h1><hr>
   <div style="overflow-x: auto; white-space: nowrap; border: 1px solid #ccc; padding: 10px;">
-  <h2>操作絞り</h2><hr>
-  <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
-    <select id="clinicSelector" class="form-select" style="max-width: 200px;" onchange="switchClinic(this.value)"></select>
-    <button class="btn btn-primary" onclick="AddNewCK()">＋ カウンセラー追加</button>
-    <button class="btn btn-primary" onclick="AddNewCustomer()">＋ 新規患者様追加</button>
-    <button class="btn btn-primary" onclick="DeleteCK()">＋ カウンセラー欠勤</button>
-    <button class="btn btn-primary" onclick="DeleteCustomer()">＋ 患者様キャンセル</button>
-  </div><br>
+    <h2>操作絞り</h2><hr>
+    <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
+      <select id="clinicSelector" class="form-select" style="max-width: 200px;" onchange="switchClinic(this.value)"></select>
+      <button class="btn btn-primary" onclick="AddNewCK()">＋ カウンセラー追加</button>
+      <button class="btn btn-primary" onclick="AddNewCustomer()">＋ 新規患者様追加</button>
+      <button class="btn btn-primary" onclick="DeleteCK()">＋ カウンセラー欠勤</button>
+      <button class="btn btn-primary" onclick="DeleteCustomer()">＋ 患者様キャンセル</button>
+    </div><br>
+  </div>
 
   <div style="display: flex; gap: 20px; align-items: flex-start; overflow-x: auto; white-space: nowrap; border: 1px solid #ccc; padding: 10px;">
     <!-- Schedule Table -->
