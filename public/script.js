@@ -206,6 +206,8 @@ function AddNewCK() {
 
   renderTable();
   renderBarChart();
+
+  saveTimetable(); 
 }
 
 function AddNewCustomer() {
@@ -227,13 +229,15 @@ function AddNewCustomer() {
   // Add new patient under the selected CK
   currentClinic.patients.push({
     Patient: customerName,
-    schedule: [],
+    schedule: [start, end],
     CK: ckName,
     options: [{ CK_option1: "", CK_option2: "" }]
   });
 
   renderTable();
   renderBarChart();
+
+  saveTimetable(); 
 }
 
 function DeleteCK() {
@@ -249,6 +253,8 @@ function DeleteCK() {
   currentClinic.patients = currentClinic.patients.filter(p => p.CK !== ckName);
   renderTable();
   renderBarChart();
+
+  saveTimetable(); 
 }
 
 function DeleteCustomer() {
@@ -264,22 +270,29 @@ function DeleteCustomer() {
   currentClinic.patients.splice(index, 1);
   renderTable();
   renderBarChart();
+
+  saveTimetable(); 
 }
 
-async function saveToServer() {
-  const res = await fetch("/save", {
-    method: "POST",
+function saveTimetable() {
+  fetch('/save', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(allClinicData)
+    body: JSON.stringify(timetable)  // This assumes `timetable` is the full object structure you're modifying
+  })
+  .then(res => {
+    if (!res.ok) throw new Error("Failed to save.");
+    return res.text();
+  })
+  .then(msg => {
+    console.log("✅ Save successful:", msg);
+  })
+  .catch(err => {
+    console.error("❌ Save failed:", err);
+    alert("保存に失敗しました");
   });
-
-  if (res.ok) {
-    alert("保存しました！");
-  } else {
-    alert("保存に失敗しました。");
-  }
 }
 
 function generateTimeSlots(start, end) {
