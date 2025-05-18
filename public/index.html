@@ -16,18 +16,18 @@
   <div style="overflow-x: auto; white-space: nowrap; border: 1px solid #ccc; padding: 10px;">
     <h2>クリニック絞り</h2><hr>
     <select id="clinicSelector" class="form-select mb-3" onchange="switchClinic(this.value)"></select>
+    <div class="mb-3">
+      <button class="btn btn-primary" onclick="AddNewCK()">＋ カウンセラー追加</button>
+      <button class="btn btn-primary" onclick="AddNewCustomer()">＋ 新規患者様追加</button>
+      <button class="btn btn-primary" onclick="DeleteCK()">＋ カウンセラー欠勤</button>
+      <button class="btn btn-primary" onclick="DeleteCustomer()">＋ 患者様キャンセル</button>
+    </div><br>
   </div><br>
 
 
   <div style="display: flex; gap: 20px; align-items: flex-start; overflow-x: auto; white-space: nowrap; border: 1px solid #ccc; padding: 10px;">
     <div style="min-width: 600px;">
       <h2>スケジュール時間帯テーブル</h2><hr>
-      <div class="mb-3">
-        <button class="btn btn-primary" onclick="AddNewCK()">＋ カウンセラー追加</button>
-        <button class="btn btn-primary" onclick="AddNewCustomer()">＋ 新規患者様追加</button>
-        <button class="btn btn-primary" onclick="DeleteCK()">＋ カウンセラー欠勤</button>
-        <button class="btn btn-primary" onclick="DeleteCustomer()">＋ 患者様キャンセル</button>
-      </div><br>
       <div id="timetable-container" style="display: inline-block;">
       </div>
     </div>
