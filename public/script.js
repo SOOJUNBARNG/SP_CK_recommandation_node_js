@@ -275,12 +275,14 @@ function DeleteCustomer() {
 }
 
 function saveTimetable() {
+  console.log("💾 Saving this data:", JSON.stringify(allClinicData, null, 2));
+
   fetch('/save', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(timetable)  // This assumes `timetable` is the full object structure you're modifying
+    body: JSON.stringify(allClinicData)
   })
   .then(res => {
     if (!res.ok) throw new Error("Failed to save.");
@@ -294,6 +296,8 @@ function saveTimetable() {
     alert("保存に失敗しました");
   });
 }
+
+
 
 function generateTimeSlots(start, end) {
   const slots = [];

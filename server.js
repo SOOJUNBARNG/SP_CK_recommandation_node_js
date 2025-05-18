@@ -31,9 +31,9 @@ fastify.get("/", function (request, reply) {
   return reply.sendFile("index.html"); // from /public
 });
 
-// ✅ Save endpoint for timetable.json
 fastify.post("/save", async function (request, reply) {
   const filePath = path.join(__dirname, "public", "timetable.json");
+  console.log("📥 Incoming save:", request.body);
 
   try {
     await fs.promises.writeFile(filePath, JSON.stringify(request.body, null, 2));
